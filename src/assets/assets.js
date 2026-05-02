@@ -117,52 +117,48 @@ export const roomCommonData = [
 ];
 
 
-const hotelDetails = [
+export const hotelDetails = [
   {
     _id: "67f76393197ac559e4089b72",
     name: "Luxury Stay Inn",
     country: "Dubai",
     address: "123 Palm Street, Downtown",
-    image: "room1.jpg",
+    image: assets.roomImg1,
     bedType: "double",
     price: 150,
     availability: true
   },
-
   {
     _id: "67f76393197ac559e4089b73",
     name: "Skyline Hotel",
     country: "Singapore",
     address: "45 Marina Bay Road",
-    image: "room2.jpg",
+    image: assets.roomImg2,
     bedType: "single",
     price: 120,
     availability: true
   },
-
   {
     _id: "67f76393197ac559e4089b74",
     name: "Empire Suites",
     country: "New York",
     address: "789 Manhattan Ave",
-    image: "room3.jpg",
+    image: assets.roomImg3,
     bedType: "double",
     price: 200,
     availability: false
   },
-
   {
     _id: "67f76393197ac559e4089b75",
     name: "Royal London Stay",
     country: "London",
     address: "221 Baker Street",
-    image: "room4.jpg",
+    image: assets.roomImg4,
     bedType: "single",
     price: 180,
     availability: true
   }
 ];
-
 
 
 
@@ -173,7 +169,7 @@ export const bookingData = [
     hotelName: "Luxury Stay Inn",
     address: "123 Palm Street, Downtown",
     city: "Dubai",
-    image: "room1.jpg",
+    image: assets.roomImg1,
     checkInDate: "2025-04-30",
     checkOutDate: "2025-05-01",
     paymentStatus: "complete",
@@ -181,13 +177,12 @@ export const bookingData = [
     bedType: "double",
     guestCount: 1
   },
-
   {
     _id: "67f76829994a731e97d3b8c3",
     hotelName: "Skyline Hotel",
     address: "45 Marina Bay Road",
     city: "Singapore",
-    image: "room2.jpg",
+    image: assets.roomImg2,
     checkInDate: "2025-04-27",
     checkOutDate: "2025-04-28",
     paymentStatus: "pending",
@@ -195,13 +190,12 @@ export const bookingData = [
     bedType: "single",
     guestCount: 2
   },
-
   {
     _id: "67f76810994a731e97d3b8b4",
     hotelName: "Empire Suites",
     address: "789 Manhattan Ave",
     city: "New York",
-    image: "room3.jpg",
+    image: assets.roomImg3,
     checkInDate: "2025-04-11",
     checkOutDate: "2025-04-12",
     paymentStatus: "failed",
