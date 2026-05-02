@@ -9,6 +9,7 @@ import MyBooking from './Pages/MyBooking';
 import Exprience from './Pages/Exprience';
 import Navbar from './component/Navbar';
 import About from './Pages/About';
+import Login from './component/Login';
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
    
       
        <Router>
+       <Login/>
        <Navbar/>
         <Routes>
         
