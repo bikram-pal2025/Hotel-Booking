@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { assets } from "../assets/assets";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { StoreContext } from "./storeContext";
@@ -7,7 +7,7 @@ const Navbar = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const { setLogin } = useContext(StoreContext);
+  const { setLogin, setLoginProfile, loginProfile } = useContext(StoreContext);
 
   const navLinks = [
     { name: "Home", path: "/" },
@@ -18,6 +18,7 @@ const Navbar = () => {
 
   const [isScrolled, setIsScrolled] = React.useState(false);
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const [openProfile, setOpenProfile] = useState(false);
 
   const isHome = location.pathname === "/";
 
@@ -78,7 +79,8 @@ const Navbar = () => {
       </div>
 
       {/* Desktop Right */}
-      <div className="hidden md:flex items-center gap-4">
+      <div className="hidden md:flex items-center gap-8">
+        {/* Search Icon */}
         <svg
           className={`h-6 w-6 transition-all duration-500 ${
             isHome && !isScrolled ? "text-white" : "text-gray-700"
@@ -92,15 +94,57 @@ const Navbar = () => {
           <line x1="21" y1="21" x2="16.65" y2="16.65" />
         </svg>
 
-        <button
-               onClick={() => {
-  setLogin(true);
-  navigate('/'); 
-}}
-          className="px-8 py-2.5 rounded-full ml-4 cursor-pointer bg-black text-white"
-        >
-          Login
-        </button>
+        {/* Login Button */}
+        {!loginProfile && (
+          <button
+            onClick={() => {
+              setLogin(true);
+              navigate("/");
+            }}
+            className="px-8 py-2.5 rounded-full ml-4 cursor-pointer bg-black text-white"
+          >
+            Login
+          </button>
+        )}
+
+        {/* Profile + Hover Menu */}
+        {loginProfile && (
+          <div className="relative group">
+            {/* Profile Icon */}
+            <img
+              className={`h-10 cursor-pointer ${
+                isHome && !isScrolled ? "brightness-0 invert" : "brightness-0"
+              }`}
+              src={assets.userIcon}
+              alt=""
+            />
+
+            {/* Hover Menu */}
+            <div
+              className="absolute right-0 mt-2 w-40 bg-white shadow-lg rounded-md
+                      opacity-0 invisible group-hover:opacity-100 group-hover:visible
+                      transition-all duration-300 z-50"
+            >
+              <ul className="text-sm text-gray-700">
+                <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                  My Profile
+                </li>
+                <Link
+                  to="/my-booking"
+                  className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                >
+                  My Bookings
+                </Link>
+                <li
+                  onClick={() => setLoginProfile(false)}
+                  className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                >
+                  Logout
+                </li>
+              </ul>
+            </div>
+          </div>
+        )}
       </div>
 
       {/* Mobile Menu Button */}
@@ -119,6 +163,45 @@ const Navbar = () => {
           <line x1="4" y1="12" x2="20" y2="12" />
           <line x1="4" y1="18" x2="20" y2="18" />
         </svg>
+
+        {/* user icon + hover menu for mobile */}
+
+        {loginProfile && (
+          <div className="relative group">
+            <img
+              onClick={() => setOpenProfile((prev) => !prev)}
+              className={`h-10 cursor-pointer ${
+                isHome && !isScrolled ? "brightness-0 invert" : "brightness-0"
+              }`}
+              src={assets.userIcon}
+              alt="user"
+            />
+
+            {/* hover menu mobile */}
+
+            {openProfile && (
+              <div className=" absolute right-0 mt-2 w-40 bg-white shadow-lg rounded-md z-50 transition-all duration-300 ">
+                <ul className="text-sm text-gray-700">
+                  <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                    My Profile
+                  </li>
+                  <Link
+                    to="/my-booking"
+                    className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                  >
+                    My Bookings
+                  </Link>
+                  <li
+                    onClick={() => setLoginProfile(false)}
+                    className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                  >
+                    Logout
+                  </li>
+                </ul>
+              </div>
+            )}
+          </div>
+        )}
       </div>
 
       {/* Mobile Menu */}
@@ -144,21 +227,22 @@ const Navbar = () => {
         </button>
 
         {navLinks.map((link, i) => (
-          <Link
-           key={i} to={link.path} onClick={() => setIsMenuOpen(false)}>
+          <Link key={i} to={link.path} onClick={() => setIsMenuOpen(false)}>
             {link.name}
           </Link>
         ))}
 
-        <button
-     onClick={() => {
-  setLogin(true);
-  navigate('/'); 
-}}
-          className="bg-black text-white px-8 py-2.5 rounded-full"
-        >
-          Login
-        </button>
+        {!loginProfile && (
+          <button
+            onClick={() => {
+              setLogin(true);
+              navigate("/");
+            }}
+            className="px-8 py-2.5 rounded-full ml-4 cursor-pointer bg-black text-white"
+          >
+            Login
+          </button>
+        )}
       </div>
     </nav>
   );

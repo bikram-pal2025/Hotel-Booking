@@ -4,11 +4,14 @@ export const StoreContext = createContext(null);
 
 const StoreContextProvider = (props) => {
 
-  const [login, setLogin] = useState(true)
+  const [login, setLogin] = useState(true);
+  const [loginProfile, setLoginProfile] = useState(false)
 
   const contextValue = {
     login,
     setLogin,
+    setLoginProfile,
+    loginProfile,
     
   };
 
