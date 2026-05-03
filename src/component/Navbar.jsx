@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { assets } from "../assets/assets";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { StoreContext } from "./storeContext";
 
 const Navbar = () => {
-  const location = useLocation(); 
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const { setLogin } = useContext(StoreContext);
 
   const navLinks = [
     { name: "Home", path: "/" },
@@ -43,14 +47,12 @@ const Navbar = () => {
       }`}
     >
       {/* Logo */}
-   <Link to='/'>
+      <Link to="/">
         <img
           src={assets.logo}
           alt="logo"
           className={
-            isHome && !isScrolled
-              ? "brightness-0 invert"
-              : "brightness-0"
+            isHome && !isScrolled ? "brightness-0 invert" : "brightness-0"
           }
         />
       </Link>
@@ -58,9 +60,9 @@ const Navbar = () => {
       {/* Desktop Nav */}
       <div className="hidden md:flex items-center gap-4 lg:gap-8">
         {navLinks.map((link, i) => (
-          <a
+          <Link
             key={i}
-            href={link.path}
+            to={link.path}
             className={`group flex flex-col gap-0.5 ${
               isHome && !isScrolled ? "text-white" : "text-gray-700"
             }`}
@@ -71,7 +73,7 @@ const Navbar = () => {
                 isHome && !isScrolled ? "bg-white" : "bg-gray-700"
               } h-0.5 w-0 group-hover:w-full transition-all duration-300`}
             />
-          </a>
+          </Link>
         ))}
       </div>
 
@@ -90,7 +92,13 @@ const Navbar = () => {
           <line x1="21" y1="21" x2="16.65" y2="16.65" />
         </svg>
 
-        <button className="px-8 py-2.5 rounded-full ml-4 cursor-pointer bg-black text-white">
+        <button
+               onClick={() => {
+  setLogin(true);
+  navigate('/'); 
+}}
+          className="px-8 py-2.5 rounded-full ml-4 cursor-pointer bg-black text-white"
+        >
           Login
         </button>
       </div>
@@ -136,12 +144,19 @@ const Navbar = () => {
         </button>
 
         {navLinks.map((link, i) => (
-          <a key={i} href={link.path} onClick={() => setIsMenuOpen(false)}>
+          <Link
+           key={i} to={link.path} onClick={() => setIsMenuOpen(false)}>
             {link.name}
-          </a>
+          </Link>
         ))}
 
-        <button className="bg-black text-white px-8 py-2.5 rounded-full">
+        <button
+     onClick={() => {
+  setLogin(true);
+  navigate('/'); 
+}}
+          className="bg-black text-white px-8 py-2.5 rounded-full"
+        >
           Login
         </button>
       </div>

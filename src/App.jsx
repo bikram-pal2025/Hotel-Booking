@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { bookingData,hotelDetails } from './assets/assets';
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -10,16 +10,21 @@ import Exprience from './Pages/Exprience';
 import Navbar from './component/Navbar';
 import About from './Pages/About';
 import Login from './component/Login';
+import { StoreContext } from './component/storeContext';
 
 const App = () => {
+   const {login} = useContext(StoreContext)
   return (
     <div>
 
-   
+   {login? <Login/>:null}
+
+  
       
        <Router>
-       <Login/>
-       <Navbar/>
+       
+       {!login? <Navbar/>:null}
+       
         <Routes>
         
           <Route path='/' element={<Home/>} />

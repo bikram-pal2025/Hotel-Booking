@@ -1,11 +1,22 @@
-import React from 'react'
+import { createContext, useState } from "react";
 
-const storeContext = () => {
+export const StoreContext = createContext(null);
+
+const StoreContextProvider = (props) => {
+
+  const [login, setLogin] = useState(true)
+
+  const contextValue = {
+    login,
+    setLogin,
+    
+  };
+
   return (
-    <div>
-      
-    </div>
-  )
-}
+    <StoreContext.Provider value={contextValue}>
+      {props.children}
+    </StoreContext.Provider>
+  );
+};
 
-export default storeContext
+export default StoreContextProvider;
