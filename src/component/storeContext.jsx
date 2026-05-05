@@ -1,23 +1,23 @@
+/* eslint-disable react-refresh/only-export-components */
+
 import { createContext, useState } from "react";
 
 export const StoreContext = createContext(null);
 
-const StoreContextProvider = (props) => {
-
+const StoreContextProvider = ({ children }) => {
   const [login, setLogin] = useState(true);
-  const [loginProfile, setLoginProfile] = useState(false)
+  const [loginProfile, setLoginProfile] = useState(false);
 
   const contextValue = {
     login,
     setLogin,
-    setLoginProfile,
     loginProfile,
-    
+    setLoginProfile,
   };
 
   return (
     <StoreContext.Provider value={contextValue}>
-      {props.children}
+      {children}
     </StoreContext.Provider>
   );
 };

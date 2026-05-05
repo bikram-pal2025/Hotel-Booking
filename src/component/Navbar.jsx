@@ -43,7 +43,7 @@ const Navbar = () => {
         isHome
           ? isScrolled
             ? "bg-white/80 shadow-md text-gray-700 backdrop-blur-lg py-3 md:py-4"
-            : "bg-indigo-500 py-4 md:py-6"
+            : " bg-transparent py-4 md:py-6"
           : "bg-white shadow-md text-gray-700 py-3 md:py-4"
       }`}
     >
