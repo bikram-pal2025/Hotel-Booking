@@ -124,7 +124,7 @@ export const hotelDetails = [
     _id: "67f76393197ac559e4089b72",
     name: "Luxury Stay Inn",
     country: "Dubai",
-    address: "123 Palm Street, Downtown",
+    address: "123 Palm Street",
     image: assets.roomImg1,
     bedType: "double",
     price: 150,
