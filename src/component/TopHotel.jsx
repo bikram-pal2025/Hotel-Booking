@@ -7,7 +7,7 @@ const TopHotel = () => {
   return (
    
     <>
-      <div className="mt-20 mb-24 w-[90%] md:w-[90%] mx-auto flex flex-col items-center justify-center gap-4">
+      <div className="mt-20 bg-[#F8FAFC] mb-24 py-15 mx-auto flex flex-col items-center justify-center gap-4">
 
         {/* Heading */}
         <h1 className="font-thin text-4xl md:text-5xl lg:text-4xl font-['Playfair_Display']">
@@ -88,7 +88,7 @@ const TopHotel = () => {
                     </span>
                   </h1>
 
-                  <button onClick={()=>navigate(`/book-hotel/${data._id}`)} className="border border-gray-400 px-4 py-2 rounded-lg hover:bg-black hover:text-white transition-all duration-300">
+                  <button onClick={()=>navigate(`/book-hotel/${data._id}`)} className="border border-gray-400 px-4 py-2 cursor-pointer rounded-lg hover:bg-black hover:text-white transition-all duration-300">
                     Book Now
                   </button>
 
@@ -100,6 +100,11 @@ const TopHotel = () => {
           ))}
 
         </div>
+           
+          <button onClick={()=>navigate('/hotel-room')} className=" mt-15 border border-gray-400 px-4 py-2 cursor-pointer rounded-lg hover:bg-black hover:text-white transition-all duration-300">
+                   View all Destinations
+                  </button>
+
       </div>
     </>
   );
