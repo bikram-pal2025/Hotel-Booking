@@ -117,7 +117,7 @@ const Login = () => {
             />
           </div>
           <div className=" flex text-white focus-within:ring-indigo-500/60 items-center w-full h-12 px-4 gap-4  bg-white/5 ring-2 ring-white/10 rounded-full  ">
-            <i class="fa-solid fa-lock"></i>
+            <i className="fa-solid fa-lock"></i>
 
             <input
               className="w-full bg-transparent  text-white outline-none "

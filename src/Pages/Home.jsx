@@ -3,6 +3,7 @@ import Hero from "../component/Hero";
 import TopHotel from "../component/TopHotel";
 import { StoreContext } from "../component/storeContext";
 import ExclosiveOffer from "../component/ExclosiveOffer";
+import Review from "../component/Review";
 
 const Home = () => {
   const { login } = useContext(StoreContext);
@@ -15,6 +16,7 @@ const Home = () => {
        <>
          <TopHotel />
         <ExclosiveOffer/>
+         <Review/>
        </>
       )}
     </div>
