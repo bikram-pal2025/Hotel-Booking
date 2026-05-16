@@ -11,6 +11,7 @@ import Navbar from './component/Navbar';
 import About from './Pages/About';
 import Login from './component/Login';
 import { StoreContext } from './component/storeContext';
+import Footer from './component/Footer';
 
 const App = () => {
    const {login} = useContext(StoreContext)
@@ -18,12 +19,13 @@ const App = () => {
     <div>
 
    {login? <Login/>:null}
-
   
+ 
       
        <Router>
        
-       {!login? <Navbar/>:null}
+     {!login? <Navbar/>:null}
+   
        
         <Routes>
         
@@ -38,7 +40,7 @@ const App = () => {
         </Routes>
        </Router>
 
-
+               {!login? <Footer/>:null}
     </div>
   )
 }
