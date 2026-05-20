@@ -55,7 +55,7 @@ const Login = () => {
       <div className=" fixed  inset-0   flex justify-center items-center z-50 ">
         <form
           onSubmit={onSubmitHandler}
-          className="w-[90%]  sm:w-[400px] bg-white/6 border border-white/12 rounded-2xl px-8 py-6 flex flex-col justify-center items-center gap-5 "
+          className="w-[90%]  sm:w-[400px] bg-black border border-white/12 rounded-2xl px-8 py-6 flex flex-col justify-center items-center gap-5 "
         >
           <div className="w-full relative">
             {/* Top bar */}

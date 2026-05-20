@@ -123,7 +123,7 @@ export const hotelDetails = [
   {
     _id: "67f76393197ac559e4089b72",
     name: "Luxury Stay Inn",
-    country: "Dubai",
+    city: "Dubai",
     address: "123 Palm Street",
     image: assets.roomImg1,
     bedType: "double",
@@ -133,7 +133,7 @@ export const hotelDetails = [
   {
     _id: "67f76393197ac559e4089b73",
     name: "Skyline Hotel",
-    country: "Singapore",
+    city: "Singapore",
     address: "45 Marina Bay Road",
     image: assets.roomImg2,
     bedType: "single",
@@ -143,7 +143,7 @@ export const hotelDetails = [
   {
     _id: "67f76393197ac559e4089b74",
     name: "Empire Suites",
-    country: "New York",
+    city: "New York",
     address: "789 Manhattan Ave",
     image: assets.roomImg3,
     bedType: "double",
@@ -153,7 +153,7 @@ export const hotelDetails = [
   {
     _id: "67f76393197ac559e4089b75",
     name: "Royal London Stay",
-    country: "London",
+    city: "London",
     address: "221 Baker Street",
     image: assets.roomImg4,
     bedType: "single",

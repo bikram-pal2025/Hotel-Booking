@@ -3,75 +3,214 @@ import { assets } from "../assets/assets";
 import { StoreContext } from "./storeContext";
 
 const Footer = () => {
+  const { email, setEmail } = useContext(StoreContext);
 
-    const {email,setEmail} = useContext(StoreContext)
-    return (
-        <div className='text-gray-500/80 bg-[#F6F9FC] pt-8 px-6 md:px-16 lg:px-24 xl:px-32'>
-            <div className='flex flex-wrap justify-between gap-12 md:gap-6'>
-                <div className='max-w-80'>
-                    <img src={assets.logo} alt="logo" className=' brightness-0 mb-4 h-8 md:h-9' />
-                    <p className='text-sm'>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text
-                    </p>
-                    <div className='flex items-center gap-3 mt-4'>
-                        {/* Instagram */}
-                        <img src={assets.instagramIcon} alt="" />
-                        {/* Facebook */}
-                        <img src={assets.facebookIcon} alt="" />
-                        {/* Twitter */}
-                        <img src={assets.twitterIcon} alt="" />
-                        {/* LinkedIn */}
-                        <img src={assets.linkendinIcon} alt="" />
-                    </div>
-                </div>
+  return (
+    <footer className="bg-[#F6F9FC] text-gray-500/80 mt-auto">
+      
+      {/* Main Footer */}
+      <div className="pt-10 px-6 md:px-16 lg:px-24 xl:px-32">
 
-                <div>
-                    <p className="text-base font-['Playfair_Display'] text-gray-800">COMPANY</p>
-                    <ul className='mt-3 flex flex-col gap-2 text-sm'>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">Press</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Partners</a></li>
-                    </ul>
-                </div>
+        <div className="flex flex-wrap justify-between gap-12 pb-10">
 
-                <div>
-                    <p className=" font-['Playfair_Display'] text-base  text-gray-800">SUPPORT</p>
-                    <ul className='mt-3 flex flex-col gap-2 text-sm'>
-                        <li><a href="#">Help Center</a></li>
-                        <li><a href="#">Safety Information</a></li>
-                        <li><a href="#">Cancellation Options</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">Accessibility</a></li>
-                    </ul>
-                </div>
+          {/* Logo Section */}
+          <div className="max-w-80">
+            <img
+              src={assets.logo}
+              alt="logo"
+              className="brightness-0 mb-4 h-8 md:h-9"
+            />
 
-                <div className='max-w-80'>
-                    <p className=" font-['Playfair_Display'] text-base text-gray-800">STAY UPDATED</p>
-                    <p className='mt-3 text-sm'>
-                        Subscribe to our newsletter for inspiration and special offers.
-                    </p>
-                    <div className='flex items-center mt-4'>
-                        <input type="text" className='bg-white rounded-l border border-gray-300 h-9 px-3 outline-none' placeholder='Your email' value={email} onChange={(e)=>setEmail(e.target.value)}  />
-                        <button className='flex items-center justify-center bg-black h-9 w-9 aspect-square rounded-r'>
-                            {/* Arrow icon */}
-                           <img src={assets.arrowIcon} className="invert brightness-0" alt="" />
-                        </button>
-                    </div>
-                </div>
+            <p className="text-sm leading-6">
+              Lorem Ipsum is simply dummy text of the printing and
+              typesetting industry. Lorem Ipsum has been the industry's
+              standard dummy text.
+            </p>
+
+            {/* Social Icons */}
+            <div className="flex items-center gap-3 mt-4">
+
+              <img
+                src={assets.instagramIcon}
+                alt="instagram"
+                className="cursor-pointer"
+              />
+
+              <img
+                src={assets.facebookIcon}
+                alt="facebook"
+                className="cursor-pointer"
+              />
+
+              <img
+                src={assets.twitterIcon}
+                alt="twitter"
+                className="cursor-pointer"
+              />
+
+              <img
+                src={assets.linkendinIcon}
+                alt="linkedin"
+                className="cursor-pointer"
+              />
             </div>
-            <hr className='border-gray-300 mt-8' />
-            <div className='flex flex-col md:flex-row gap-2 items-center justify-between py-5'>
-                <p>© {new Date().getFullYear()} <a href="https://prebuiltui.com">PrebuiltUI</a>. All rights reserved.</p>
-                <ul className='flex items-center gap-4'>
-                    <li><a href="#">Privacy</a></li>
-                    <li><a href="#">Terms</a></li>
-                    <li><a href="#">Sitemap</a></li>
-                </ul>
+          </div>
+
+          {/* Company */}
+          <div>
+            <h2 className="text-base text-gray-800 font-['Playfair_Display']">
+              COMPANY
+            </h2>
+
+            <ul className="mt-4 flex flex-col gap-2 text-sm">
+
+              <li>
+                <a href="#" className="hover:text-black duration-200">
+                  About
+                </a>
+              </li>
+
+              <li>
+                <a href="#" className="hover:text-black duration-200">
+                  Careers
+                </a>
+              </li>
+
+              <li>
+                <a href="#" className="hover:text-black duration-200">
+                  Press
+                </a>
+              </li>
+
+              <li>
+                <a href="#" className="hover:text-black duration-200">
+                  Blog
+                </a>
+              </li>
+
+              <li>
+                <a href="#" className="hover:text-black duration-200">
+                  Partners
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Support */}
+          <div>
+            <h2 className="text-base text-gray-800 font-['Playfair_Display']">
+              SUPPORT
+            </h2>
+
+            <ul className="mt-4 flex flex-col gap-2 text-sm">
+
+              <li>
+                <a href="#" className="hover:text-black duration-200">
+                  Help Center
+                </a>
+              </li>
+
+              <li>
+                <a href="#" className="hover:text-black duration-200">
+                  Safety Information
+                </a>
+              </li>
+
+              <li>
+                <a href="#" className="hover:text-black duration-200">
+                  Cancellation Options
+                </a>
+              </li>
+
+              <li>
+                <a href="#" className="hover:text-black duration-200">
+                  Contact Us
+                </a>
+              </li>
+
+              <li>
+                <a href="#" className="hover:text-black duration-200">
+                  Accessibility
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Newsletter */}
+          <div className="max-w-80">
+            <h2 className="text-base text-gray-800 font-['Playfair_Display']">
+              STAY UPDATED
+            </h2>
+
+            <p className="mt-4 text-sm leading-6">
+              Subscribe to our newsletter for inspiration and special offers.
+            </p>
+
+            <div className="flex items-center mt-4">
+
+              <input
+                type="email"
+                placeholder="Your email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="w-full h-10 border border-gray-300 rounded-l px-3 outline-none bg-white"
+              />
+
+              <button className="h-10 w-10 flex items-center justify-center bg-black rounded-r">
+
+                <img
+                  src={assets.arrowIcon}
+                  alt="arrow"
+                  className="invert"
+                />
+              </button>
             </div>
+          </div>
         </div>
-    );
+
+        {/* Divider */}
+        <hr className="border-gray-300" />
+
+        {/* Bottom Footer */}
+        <div className="py-5 flex flex-col md:flex-row items-center justify-between gap-3 text-sm">
+
+          <p>
+            © {new Date().getFullYear()}{" "}
+            <a
+              href="https://prebuiltui.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-black"
+            >
+              PrebuiltUI
+            </a>
+            . All rights reserved.
+          </p>
+
+          <ul className="flex items-center gap-4">
+
+            <li>
+              <a href="#" className="hover:text-black duration-200">
+                Privacy
+              </a>
+            </li>
+
+            <li>
+              <a href="#" className="hover:text-black duration-200">
+                Terms
+              </a>
+            </li>
+
+            <li>
+              <a href="#" className="hover:text-black duration-200">
+                Sitemap
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  );
 };
 
 export default Footer;
