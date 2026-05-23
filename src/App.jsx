@@ -37,10 +37,7 @@ const App = () => {
               element={<Home />}
             />
 
-            <Route
-              path="/book-hotel"
-              element={<BookHotel />}
-            />
+        
 
             <Route
               path="/book-hotel/:id"
