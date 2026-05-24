@@ -128,7 +128,8 @@ export const hotelDetails = [
     image: assets.roomImg1,
     bedType: "double",
     price: 150,
-    availability: true
+    availability: true,
+    off:"20%"
   },
   {
     _id: "67f76393197ac559e4089b73",
@@ -138,7 +139,8 @@ export const hotelDetails = [
     image: assets.roomImg2,
     bedType: "single",
     price: 120,
-    availability: true
+    availability: true,
+    off:"25%"
   },
   {
     _id: "67f76393197ac559e4089b74",
@@ -148,7 +150,8 @@ export const hotelDetails = [
     image: assets.roomImg3,
     bedType: "double",
     price: 200,
-    availability: false
+    availability: false,
+    off:"10%"
   },
   {
     _id: "67f76393197ac559e4089b75",
@@ -158,7 +161,8 @@ export const hotelDetails = [
     image: assets.roomImg4,
     bedType: "single",
     price: 180,
-    availability: true
+    availability: true,
+    off:"22%"
   }
 ];
 
