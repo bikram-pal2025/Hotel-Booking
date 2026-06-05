@@ -139,7 +139,7 @@ export const hotelDetails = [
     image: assets.roomImg2,
     bedType: "single",
     price: 120,
-    availability: true,
+    availability: false,
     off:"25%"
   },
   {
@@ -150,7 +150,7 @@ export const hotelDetails = [
     image: assets.roomImg3,
     bedType: "double",
     price: 200,
-    availability: false,
+    availability: true,
     off:"10%"
   },
   {

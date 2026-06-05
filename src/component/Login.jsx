@@ -2,6 +2,7 @@
 
 import  { useContext, useState } from "react";
 import { StoreContext } from "./storeContext";
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -13,6 +14,9 @@ const Login = () => {
     email: "",
     password: "",
   });
+
+
+  const navigate = useNavigate();
 
   const onChangeHandler = (e) => {
     const { name, value } = e.target;
@@ -48,6 +52,9 @@ const Login = () => {
     setFormData({ name: "", email: "", password: "" });
     setLogin(false);
     setLoginProfile(true)
+
+    navigate(-1)
+
   };
 
   return (

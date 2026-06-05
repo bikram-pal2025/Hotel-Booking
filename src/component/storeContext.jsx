@@ -9,6 +9,9 @@ const StoreContextProvider = ({ children }) => {
   const [loginProfile, setLoginProfile] = useState(false);
   const [email, setEmail] = useState("");
 
+
+  const [myBooking, setMyBooking] = useState([])
+
     const [hotelId, setHotelId] = useState(null);
     
     const [bookingData, setBookingData] = useState({
@@ -17,6 +20,20 @@ const StoreContextProvider = ({ children }) => {
   checkOut: "",
   totalDays: 0,
   finalPrice: 0,
+  gaustCount:0,
+});
+
+
+const [coustomerInfo, setCoustomerInfo] = useState({
+  firstName: "",
+  lastName: "",
+  email: "",
+  mobile: "",
+  city: "",
+  state: "",
+  pin: "",
+  request: "",
+  district:"",
 });
 
 
@@ -33,6 +50,10 @@ const StoreContextProvider = ({ children }) => {
     setHotelId,
     bookingData,
     setBookingData,
+    coustomerInfo,
+    setCoustomerInfo,
+    myBooking,
+    setMyBooking,
 
   };
 
