@@ -12,7 +12,7 @@ const Navbar = () => {
   const navLinks = [
     { name: "Home", path: "/" },
     { name: "Hotel", path: "/hotel-room" },
-    { name: "Experiences", path: "/exprience" },
+  
     { name: "About", path: "/about" },
   ];
 

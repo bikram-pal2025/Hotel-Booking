@@ -194,7 +194,7 @@ const BookHotel = () => {
                 Experience Luxury Like Never Before
               </h1>
 
-              <p className="font-semibold text-2xl">${hotelId.price}/night</p>
+              <p className="font-semibold text-2xl">₹ {hotelId.price}/night</p>
             </div>
 
             <div className="flex flex-wrap gap-2 mt-3">

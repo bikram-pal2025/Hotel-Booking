@@ -5,7 +5,7 @@ import Home from "./Pages/Home";
 import BookHotel from "./Pages/BookHotel";
 import HotelRoom from "./Pages/HotelRoom";
 import MyBooking from "./Pages/MyBooking";
-import Exprience from "./Pages/Exprience";
+
 import About from "./Pages/About";
 
 import Navbar from "./component/Navbar";
@@ -59,10 +59,7 @@ const App = () => {
               element={<MyBooking />}
             />
 
-            <Route
-              path="/exprience"
-              element={<Exprience />}
-            />
+          
 
             <Route
               path="/about"

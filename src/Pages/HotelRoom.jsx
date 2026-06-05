@@ -45,32 +45,32 @@ const HotelRoom = () => {
     }
 
     // price filter
-    if (price === "0-500") {
+    if (price === "0-3000") {
 
       hotel = hotel.filter(
         (item) =>
           item.price >= 0 &&
-          item.price <= 500
+          item.price <= 3000
       );
 
     }
 
-    if (price === "500-1000") {
+    if (price === "3000-4500") {
 
       hotel = hotel.filter(
         (item) =>
-          item.price >= 500 &&
-          item.price <= 1000
+          item.price >= 3000 &&
+          item.price <= 4000
       );
 
     }
 
-    if (price === "1000-2000") {
+    if (price === "4500-7000") {
 
       hotel = hotel.filter(
         (item) =>
-          item.price >= 1000 &&
-          item.price <= 2000
+          item.price >= 4500 &&
+          item.price <= 7000
       );
 
     }
@@ -228,7 +228,7 @@ const HotelRoom = () => {
                     <div className="mt-2">
 
                       <p className="text-xl font-semibold">
-                        $ {item.price}
+                        ₹ {item.price}
 
                         <span className="text-sm text-gray-500 font-normal">
                           {" "}
@@ -410,17 +410,17 @@ const HotelRoom = () => {
                       <input
                         type="checkbox"
                         className="w-4 h-4"
-                        checked={price === "0-500"}
+                        checked={price === "0-3000"}
                         onChange={() =>
                           setPrice(
-                            price === "0-500"
+                            price === "0-3000"
                               ? ""
-                              : "0-500"
+                              : "0-3000"
                           )
                         }
                       />
 
-                      <span>$ 0 to 500</span>
+                      <span>₹ 0 to 3000</span>
 
                     </label>
 
@@ -429,17 +429,17 @@ const HotelRoom = () => {
                       <input
                         type="checkbox"
                         className="w-4 h-4"
-                        checked={price === "500-1000"}
+                        checked={price === "3000-4500"}
                         onChange={() =>
                           setPrice(
-                            price === "500-1000"
+                            price === "3000-4500"
                               ? ""
-                              : "500-1000"
+                              : "3000-4500"
                           )
                         }
                       />
 
-                      <span>$ 500 to 1000</span>
+                      <span>₹ 3000 to 4500</span>
 
                     </label>
 
@@ -448,17 +448,17 @@ const HotelRoom = () => {
                       <input
                         type="checkbox"
                         className="w-4 h-4"
-                        checked={price === "1000-2000"}
+                        checked={price === "4500-7000"}
                         onChange={() =>
                           setPrice(
-                            price === "1000-2000"
+                            price === "4500-7000"
                               ? ""
-                              : "1000-2000"
+                              : "4500-7000"
                           )
                         }
                       />
 
-                      <span>$ 1000 to 2000</span>
+                      <span>₹ 4500 to 7000</span>
 
                     </label>
 
