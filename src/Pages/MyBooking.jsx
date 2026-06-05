@@ -72,7 +72,7 @@ const MyBooking = () => {
 
                   <p className="mt-2 text-[#778191]">Guests: 2</p>
 
-                  <p className="mt-2 text-xl">Total: ${item.totalCost}</p>
+                  <p className="mt-2 text-xl">Total: ₹{item.totalCost}</p>
                 </div>
               </div>
 

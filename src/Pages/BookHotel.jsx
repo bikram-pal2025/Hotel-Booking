@@ -345,7 +345,7 @@ const BookHotel = () => {
                   <p className="text-[#778191]">Total Cost</p>
 
                   <p className="text-2xl font-semibold text-gray-800">
-                    ${bookingData.totalCost}
+                    ₹{bookingData.totalCost}
                   </p>
                 </div>
 
